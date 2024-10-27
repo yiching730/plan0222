@@ -1,0 +1,198 @@
+﻿@model IEnumerable<plan02.Models.BEmployee>
+
+@{
+    ViewData["Title"] = "Index2";
+}
+
+<h1>聘任表單紀錄</h1>
+
+@*<p>
+    <a asp-action="Create">新增表單</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BMail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BEmploymentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BEmploymentDate2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BCreatetime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BMail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BEmploymentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BEmploymentDate2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BCreatetime)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BId" class="btn btn-primary btn-sm">編輯</a> |
+                <a asp-action="Details" asp-route-id="@item.BId" class="btn btn-primary btn-sm">詳細資料</a> |
+                <a asp-action="Delete" asp-route-id="@item.BId" class="btn btn-primary btn-sm">刪除</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<hr>
+<p>※獎助生(學習型)另檢附：</p>
+
+<div class="row">
+    <div class="col-auto">
+        <form method="post" asp-controller="AEmployees" asp-action="DownloadFile2" enctype="multipart/form-data">
+            <label for="Input1">1.科技部約用人員聘任簽案</label>
+            <button type="submit" class="btn btn-primary btn-sm">下載範例</button>
+        </form>
+    </div>
+    <div class="col-auto">
+        <form method="post" asp-controller="AEmployees" asp-action="DownloadFile4" enctype="multipart/form-data">
+            <label for="Input5">2.學習活動實施計畫（3份）</label>
+            <button type="submit" class="btn btn-primary btn-sm">下載範例</button>
+        </form>
+    </div>
+
+    <div class="col-auto">
+        <form method="post" asp-controller="AEmployees" asp-action="DownloadFile5" enctype="multipart/form-data">
+            <label for="Input6">3.課程學習附課程大綱/指導教授同意書影本</label>
+            <button type="submit" class="btn btn-primary btn-sm">下載範例</button>
+        </form>
+    </div>
+    <div class="col-auto">
+        <form method="post" asp-controller="AEmployees" asp-action="DownloadFile6" enctype="multipart/form-data">
+            <label for="Input6">4.他校同意書（外校學生）</label>
+            <button type="submit" class="btn btn-primary btn-sm">下載範例</button>
+        </form>
+    </div>
+
+</div>
+<hr />
+
+
+@*@model IEnumerable<plan02.Models.BEmployee>
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+    <h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BGender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BMail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BSalary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BEmploymentDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BCreatetime)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BGender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BMail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BSalary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BEmploymentDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BCreatetime)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.BId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.BId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.BId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+

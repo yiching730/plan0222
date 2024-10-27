@@ -1,0 +1,177 @@
+﻿@model IEnumerable<plan02.Models.AEmployee>
+
+@{
+    ViewData["Title"] = "Index3";
+}
+
+<h1>Index3</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AMail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ASalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AEmploymentDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AGender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AMail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ASalary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AEmploymentDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.AId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr>
+<p>※專任助理另檢附：</p>
+<div class="row">
+    <div class="col-auto">
+        <form method="post" asp-controller="AEmployees" asp-action="DownloadFile2" enctype="multipart/form-data">
+            <label for="Input1">科技部約用人員聘任簽案</label>
+            <button type="submit" class="btn btn-primary">下載範例</button>
+        </form>
+    </div>
+
+    <div class="col-auto">
+        <form method="post" asp-controller="AEmployees" asp-action="DownloadFile3" enctype="multipart/form-data">
+            <label for="Input2">專任助理契約書（3份）</label>
+            <button type="submit" class="btn btn-primary">下載範例</button>
+        </form>
+    </div>
+    <div class="col-auto">
+        <form method="post" asp-controller="" asp-action="" enctype="multipart/form-data">
+            <label for="Input3">勞健保申請書</label>
+        </form>
+    </div>
+    <div class="col-auto">
+        <form method="post" asp-controller="" asp-action="" enctype="multipart/form-data">
+            <label for="Input4">體格檢查報告(聘期6個月以上)</label>
+        </form>
+    </div>
+
+</div>
+<hr>
+
+
+
+
+
+
+
+@*@{
+        if (ViewBag.Input1 != null || ViewBag.Input2 != null)
+        {
+            <p>校內計畫編號：@ViewBag.Input1 |科技部計畫編號：@ViewBag.Input2 </p>
+        }
+    }*@
+
+
+@*@model IEnumerable<plan02.Models.AEmployee>
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+    <h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AGender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AMail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ASalary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AEmploymentDate)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AGender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AMail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ASalary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AEmploymentDate)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.AId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.AId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.AId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@

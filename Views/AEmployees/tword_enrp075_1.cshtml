@@ -1,0 +1,21 @@
+﻿@using System.IO
+@{
+    ViewData["Title"] = "tword_enrp075_1";
+}
+
+<h2>目录内容</h2>
+<ul class="list-group">
+    //razor语法  输出file目录的文件
+    @{
+        var items = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\file");
+        foreach (var item in items)
+        {
+            <li class="list-group-item">@item.ToString()</li>
+        }
+    }
+</ul>
+<hr />
+<h2>日誌內容</h2>
+<p>
+    @ViewBag.log
+</p>

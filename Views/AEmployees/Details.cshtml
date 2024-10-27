@@ -1,0 +1,54 @@
+﻿@model plan02.Models.AEmployee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>AEmployee</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AGender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AGender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AMail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AMail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ASalary)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ASalary)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AEmploymentDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AEmploymentDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.AId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,57 @@
+﻿@model plan02.Models.AEmployee
+
+@if (TempData.ContainsKey("Alert"))
+{
+    <script>
+        alert('@TempData["Alert"]');
+    </script>
+}
+
+<div id="excel" class="carousel" data-ride="carousel" data-interval="6000">
+    <div class="form-group">
+        <a asp-action="Create" class="btn btn-secondary">新增單筆資料</a>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <div>
+            <form method="post" asp-controller="AEmployees" asp-action="DownloadFile8" enctype="multipart/form-data">
+                <button type="submit">下載範例</button>
+            </form><br>
+        </div>
+        <form method="post" asp-controller="AEmployees" asp-action="Index8" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-8">
+                    <input type="file" name="file" class="form-control" id="inputGroupFile02" onchange="checkfile(this);" />
+                </div>
+                <div class="col-4">
+                    <button type="submit">匯入</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <p></p>
+   
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1" style="color: red;">※上傳檔案結果：</label>
+        <textarea class="form-control" id="Aname" name="Aname" rows="3">  @TempData["Msg"]@TempData["Err"]</textarea>
+    </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" language="javascript">
+    function checkfile(sender) {
+        // 可接受的附檔名
+        var validExts = new Array(".xlsx", ".csv", ".xls", ".ods");
+
+        var fileExt = sender.value;
+        fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+        if (validExts.indexOf(fileExt) < 0) {
+            alert("檔案類型錯誤，可接受的副檔名有：" + validExts.toString());
+            sender.value = null;
+            return false;
+        }
+        else return true;
+    }
+</script>

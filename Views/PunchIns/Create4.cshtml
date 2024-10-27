@@ -1,0 +1,1293 @@
+﻿@model plan02.Models.PunchIn
+
+    @{
+        ViewData["Title"] = "Create4";
+    }
+
+
+<h1>Create4</h1>
+
+<hr />
+<div class="row">
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                @*<select asp-for="Year" class="form-control" asp-items="@ViewBag.yearss"></select>*@
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                @*<select asp-for="Month" class="form-control" asp-items="@ViewBag.monthss"></select>*@
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="1" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="2" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="3" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="4" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="5" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="6" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="7" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="8" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="9" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="10" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="11" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="12" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="13" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="14" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="15" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="16" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="17" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="18" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="19" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="20" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="21" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="22" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="23" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="24" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="25" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="26" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="27" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="28" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2" name="day29">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="29" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2" name="day30">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="30" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2" name="day31">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label"></label>
+                <input asp-for="Month" class="form-control" />
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" value="31" readonly="readonly" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+
+@*@model plan02.Models.PunchIn
+
+    @{
+        ViewData["Title"] = "Create";
+    }*@
+
+
+
+<!--<h1>Create</h1>
+
+<h4>PunchIn</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>-->
+@*<input asp-for="Year" class="form-control" />*@
+<!--<select asp-for="Year" class="form-control" asp-items="@ViewBag.yearss"></select>
+    <span asp-validation-for="Year" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Month" class="control-label"></label>-->
+@*<input asp-for="Month" class="form-control" />*@
+<!--<select asp-for="Month" class="form-control" asp-items="@ViewBag.monthss"></select>
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label"></label>
+                <input asp-for="Day" class="form-control" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchIn1" class="control-label"></label>
+                <input asp-for="PunchIn1" class="form-control" />
+                <span asp-validation-for="PunchIn1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PunchOut" class="control-label"></label>
+                <input asp-for="PunchOut" class="form-control" />
+                <span asp-validation-for="PunchOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark2" class="control-label"></label>
+                <input asp-for="Remark2" class="form-control" />
+                <span asp-validation-for="Remark2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>-->
+

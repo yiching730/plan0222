@@ -1,0 +1,60 @@
+﻿@model IEnumerable<plan02.Models.SignOn>
+
+@{
+    ViewData["Title"] = "DemoViewAsPdf2";
+}
+
+<h1>出勤簽到資料</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    日期
+                </th>
+                <th>
+                    上班時間
+                </th>
+                <th>
+                    下班時間
+                </th>
+                <th>
+                    請假備註
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        3/1
+                    </td>
+                    <td>
+                        @item.SignIn
+                    </td>
+                    <td>
+                        @item.SignOut
+                    </td>
+                    <td>
+                        @item.Remark
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+    @*@{
+            ViewData["Title"] = "DemoViewAsPdf";
+        }
+        <html>
+        <head>
+            <meta charset="utf-8">
+            <title>Demo</title>
+        </head>
+        <body>
+            <p>Hello AspNetCore！！</p>
+        </body>
+        </html>*@

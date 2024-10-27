@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+    var returnUrl = ViewBag.ReturnUrl;
+    var message = TempData["Message"] as string;
+    returnUrl = System.Net.WebUtility.UrlEncode(returnUrl);
+
+}
+
+@*<pre>
+    @message
+    </pre>*@
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;700&display=swap" rel="stylesheet">
+<body id="myPage" data-spy="scroll" data-target=".navbar">
+    <div class="text-center">
+        <h1 class="display-4"> 計畫人員管理系統 </h1>
+
+      @*  <p> 歡迎 @User.Identity.Name </p>*@
+
+        @*@ViewData["code"] //
+            @ViewData["token"] /
+            @ViewData["responseStr"] *
+            @ViewData["account"] .
+            @ViewData["acc"] +*@
+
+    </div>
+
+
+
+
+   
+
+
+    <div>
+        @*<p> @ViewData["code"]</p>
+            <p> @ViewData["token"]</p>
+            <p> @ViewData["acc"]</p>*@
+        @*<p> @ViewData["LDB"]</p>*@
+    </div>
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+@*@{
+        ViewData["Title"] = "Home Page";
+    }
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>*@
+

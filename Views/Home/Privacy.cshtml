@@ -1,0 +1,75 @@
+﻿@{
+        ViewData["Title"] = "Privacy Policy";
+    }
+    <h1>@ViewData["Title"]</h1>
+
+  
+    <a href="https://www.ntus.edu.tw/cht/index.php?code=list&ids=100" target="_blank" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">隱私權聲明</a>
+ 
+
+
+
+
+@*@{
+
+        var months = new List<SelectListItem>();
+        var today = DateTime.Now;
+
+        // Add previous 12 months
+        for (int i = 12; i > 0; i--)
+        {
+            months.Add(new SelectListItem
+            {
+                Value = String.Format("{0:yyyyMM}01", today.AddMonths(-i)),
+                Text = String.Format("{0:MMM-yyyy}", today.AddMonths(-i))
+            });
+        }
+
+        // Add current month
+        months.Add(new SelectListItem
+        {
+            Value = String.Format("{0:yyyyMM}01", today),
+            Text = String.Format("{0:MMM-yyyy}", today),
+            Selected = true
+        });
+
+        // Add next 12 months
+        for (int i = 1; i < 13; i++)
+        {
+            months.Add(new SelectListItem
+            {
+                Value = String.Format("{0:yyyyMM}01", today.AddMonths(i)),
+                Text = String.Format("{0:MMM-yyyy}", today.AddMonths(i))
+            });
+        }
+
+        // Test form response
+        var value = "";
+        //if (IsPost)
+        //{
+        //    value = Request["monthsDate"];
+        //}
+    }*@
+
+    @*<!DOCTYPE html>
+
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <form method="post">*@
+            @*@Html.DropDownList("monthsDate", months)*@
+            @*<input type="submit" />
+        </form>
+        <p>selection:*@ @*@value*@@*</p>
+
+    </body>
+    </html>*@
+
+
+
+
+
+

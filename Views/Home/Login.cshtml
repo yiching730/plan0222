@@ -1,0 +1,64 @@
+﻿
+@using plan02.Models
+@using plan02.BLL
+@model CaptchaResult
+@{
+    ViewData["Title"] = "Login";
+    var returnUrl = ViewBag.ReturnUrl;
+    returnUrl = System.Net.WebUtility.UrlEncode(returnUrl);
+    var message = TempData["Message"] as string;
+}
+
+<div class="text-center">
+    <h1 class="display-4">登入 </h1>
+</div>
+@*@ViewData["loginUser.Password"] =
+@ViewData["us.StoredSalt"] &
+@ViewData["us.Password"] (*@
+<div class="row mt-5">
+    <div class="col-10">
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <h5 class="alert-danger m-2">@message</h5>
+        }
+        <form action="/login?ReturnUrl=@returnUrl" method="post">
+            <div class="form-group">
+                <label for="Aaccount"> 帳號 </label>
+                <input type="text" name="Aaccount" id="Aaccount" class="form-control" placeholder="請輸入帳號">
+            </div>
+            <div class="form-group">
+                <label for="Apassword"> 密碼 </label>
+                <input type="password" name="Apassword" id="Apassword" class="form-control" placeholder="請輸入密碼">
+            </div>
+
+            @*Yiching adding 1 captcha*@
+            <div>請輸入驗證碼</div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    @*<img id="img-captcha" src="~/get-captcha-image" />*@
+                    <img id="img-captcha" src="~/get-captcha-image" asp-append-version="true">
+                </div>
+
+                <input type="text" name="capt" id="capt" class="form-control" placeholder="" asp-for="CaptchaCode" maxlength="4" />
+                <span asp-validation-for="CaptchaCode" class="text-danger"></span>
+
+            </div>
+            @*Yiching adding 1 captcha*@
+
+            <button class="btn btn-primary"> 登入 </button>
+        </form>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $("#img-captcha").click(function () {
+        resetCaptchaImage();
+    });
+
+    function resetCaptchaImage() {
+        d = new Date();
+        $("#img-captcha").attr("src", "/get-captcha-image?" + d.getTime());
+    }
+</script>
+

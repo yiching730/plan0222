@@ -1,0 +1,216 @@
+﻿@model IEnumerable<plan02.Models.BEmployee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    tr {
+        background-color: green;
+        color: white;
+    }
+
+    table, th, td {
+        border: 2px solid black;
+    }
+</style>
+<h1>我的聘任資料</h1>
+
+@*<p>
+    <a asp-action="Create">新增表單</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BMail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BEmploymentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BEmploymentDate2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BCreatetime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BMail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BEmploymentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BEmploymentDate2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BCreatetime)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BId" class="btn btn-primary btn-sm">編輯</a> |
+                <a asp-action="Details" asp-route-id="@item.BId" class="btn btn-primary btn-sm">詳細資料</a> |
+                <a asp-action="Delete" asp-route-id="@item.BId" class="btn btn-primary btn-sm">刪除</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<br>
+<hr>
+<p>※勞僱型兼任助理/臨時工另檢附：</p>
+<div class="row">
+    <div class="col-auto">
+        <form method="post" asp-controller="AEmployees" asp-action="DownloadFile2" enctype="multipart/form-data">
+            <label for="Input1">1.科技部約用人員聘任簽案</label>
+            <button type="submit" class="btn btn-primary btn-sm">下載範例</button>
+        </form>
+    </div>
+    <div class="col-auto">
+        <form method="post" asp-controller="AEmployees" asp-action="DownloadFile7" enctype="multipart/form-data">
+            <label for="Input2">2.兼任助理/臨時工勞動契約（3份）</label>
+            <button type="submit" class="btn btn-primary btn-sm">下載範例</button>
+        </form>
+    </div>
+    <div class="col-auto">
+        <form method="post" asp-controller="" asp-action="" enctype="multipart/form-data">
+            <label for="Input3">3.勞健保申請書</label>
+        </form>
+    </div>
+    <div class="col-auto">
+        <form method="post" asp-controller="" asp-action="" enctype="multipart/form-data">
+            <label for="Input4">4.體格檢查報告(聘期6個月以上)</label>
+        </form>
+    </div>
+    <div class="col-auto">
+        <form method="post" asp-controller="AEmployees" asp-action="DownloadFile6" enctype="multipart/form-data">
+            <label for="Input5">5.他校同意書（外校學生）</label>
+            <button type="submit" class="btn btn-primary btn-sm">下載範例</button>
+        </form>
+    </div>
+    <div class="col-auto">
+        <form method="post" asp-controller="" asp-action="" enctype="multipart/form-data">
+            <label for="Input6">6.無專職工作聲明書（進修部或在職班學生）</label>
+        </form>
+    </div>
+
+
+</div>
+<hr>
+
+
+@*@model IEnumerable<plan02.Models.BEmployee>
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+    <h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BGender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BMail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BSalary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BEmploymentDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BCreatetime)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BGender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BMail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BSalary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BEmploymentDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BCreatetime)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.BId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.BId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.BId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+

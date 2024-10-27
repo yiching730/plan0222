@@ -1,0 +1,112 @@
+﻿@model IEnumerable<plan02.Models.BEmployee>
+
+@{
+    ViewData["Title"] = "Print";
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>聘任表單紀錄</h1>
+    <input type="button" value="列印表單紀錄" class="btn btn-success" onClick="window.print()">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BGender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BMail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BSalary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BEmploymentDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BEmploymentDate2)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BCreatetime)
+                </th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BGender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BMail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BSalary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BEmploymentDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BEmploymentDate2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BCreatetime)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @*<div id="print-content">
+            <form>
+
+                <input type="button" onclick="printDiv('print-content')" value="print a div!" />
+            </form>
+        </div>*@
+    <script>
+
+        function printDiv(divName) {
+
+            var printContents = document.getElementById(divName).innerHTML;
+            w = window.open();
+            w.document.write(printContents);
+            w.print();
+            w.close();
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]國立臺灣體運動大學計畫人員管理系統</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/Files/NtusIcon.png" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"> </span>
+                </button>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            @*<li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">首頁 </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">隱私權 </a>
+                                </li>*@
+                            @*<li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="AdminStaff">管理者</a>
+                                </li>*@
+                        </ul>
+                    </div>
+
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav mr-auto">                         
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    聘任資料管理
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    @*<a class="dropdown-item" asp-area="" asp-controller="UserDatums" asp-action="Index">表單內容</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="UserDatums" asp-action="Create">新增表單</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="AEmployees" asp-action="Index">編輯表單</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Upload2">選擇表單</a>*@
+                                    <a class="dropdown-item" asp-area="" asp-controller="BEmployees" asp-action="Index">我的聘任資料</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="BEmployees" asp-action="Create">新增聘任資料</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="BEmployees" asp-action="Index5">查詢聘任資料</a>
+                                    @*<a class="dropdown-item" asp-area="" asp-controller="BEmployees" asp-action="DemoViewAsPdf">列印表單0-Rotativa</a>*@
+                                    <a class="dropdown-item" asp-area="" asp-controller="BEmployees" asp-action="Print">列印聘任資料</a>
+                                    @*<a class="dropdown-item" asp-controller="AEmployees" asp-action="temp">範例檔及修改檔下載區</a>*@
+                                    @*<a class="dropdown-item" asp-controller="AEmployees" asp-action="Index4">套版下載區</a>*@
+                                    <a class="dropdown-item" asp-controller="AEmployees" asp-action="Index8">EXCEL上傳</a>
+                                    <a class="dropdown-item" asp-controller="BEmployees" asp-action="Index7">套版下載區-第二種</a>
+                                  
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                 @*   <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    出勤簽到資料查詢0
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" asp-area="" asp-controller="SignOns" asp-action="Index">出勤簽到資料紀錄</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="SignOns" asp-action="Create">新增出勤簽到</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="SignOns" asp-action="Index3">新增出勤簽到3</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="SignOns" asp-action="DemoViewAsPdf2">列印出勤簽到</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="AEmployees" asp-action="Index7">列印出勤簽到2</a>
+                                        <a class="dropdown-item" asp-area="" asp-controller="SignOns" asp-action="Index2">月日內容</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>*@
+
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    出勤資料管理
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="Index">簽到退紀錄</a>
+                                    @*<a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="Create">新增出勤簽到0</a>*@
+                                    <a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="Create2">新增簽到退紀錄</a>
+                                     <a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="Create3">新增出勤簽到2</a>
+                                      <a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="Create4">新增出勤簽到3</a>
+                                       <a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="Create5">新增出勤簽到4</a>
+                                       <a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="Create7">新增出勤簽到5</a>
+                                         <a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="Index4">測試</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="Index3">查詢出勤資料</a>
+                                    @*<a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="DemoViewAsPdf3">列印出勤簽到0</a>*@
+                                    <a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="PrintPunchIn">列印出勤資料</a>
+                                     <a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="PrintPunchIn2">列印出勤資料2</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="Index2">測試出勤簽到2</a>
+                                    @*<a class="dropdown-item" asp-area="" asp-controller="PunchIns" asp-action="_Header">測試出勤簽到</a>*@
+                                  
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                     <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    系統管理
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" asp-area="" asp-controller="/Home" asp-action="Register">新增帳號</a>                                   
+                                    <a class="dropdown-item" asp-area="" asp-controller="" asp-action="">停用帳號</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="" asp-action="">編輯個人資料</a>
+                                    <a class="dropdown-item" asp-area="" asp-controller="" asp-action="">聯絡系統管理者</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                }
+
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="/Home" asp-action="Login"> 登入 </a>
+                            </li>
+
+                            @*<a class="nav-link text-dark" asp-controller="/Home" asp-action="SSO2"> SSO </a>*@
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="/Home" asp-action="Register">註冊</a>
+                            </li>
+                             <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="/Home" asp-action="ResetPassword">重設密碼</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="/Home" asp-action="Logout">@User.Identity.Name 登出</a>
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - 國立臺灣體運動大學計畫人員管理系統 - <a asp-area="" asp-controller="Home" asp-action="Privacy">隱私權聲明 </a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
+
+@*<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - plan02</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">plan02</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container">
+                &copy; 2022 - plan02 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </body>
+    </html>*@

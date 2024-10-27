@@ -1,0 +1,223 @@
+﻿@model IEnumerable<plan02.Models.AEmployee>
+
+@{
+    ViewData["Title"] = "Index2";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AMail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ASalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AEmploymentDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AGender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AMail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ASalary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AEmploymentDate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.AId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.AId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.AId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<hr>
+
+
+
+
+<p>※獎助生(學習型)另檢附：</p>
+
+    <div class="row">
+        <div class="col-auto">
+            <form method="post" asp-controller="AEmployees" asp-action="DownloadFile2" enctype="multipart/form-data">
+                <label for="Input1">科技部約用人員聘任簽案</label>
+                <button type="submit" class="btn btn-primary">下載範例</button>
+            </form>
+        </div>
+        <div class="col-auto">
+            <form method="post" asp-controller="AEmployees" asp-action="DownloadFile4" enctype="multipart/form-data">
+                <label for="Input5">學習活動實施計畫（3份）</label>
+                <button type="submit" class="btn btn-primary">下載範例</button>
+            </form>
+        </div>
+
+        <div class="col-auto">
+            <form method="post" asp-controller="AEmployees" asp-action="DownloadFile5" enctype="multipart/form-data">
+                <label for="Input6">課程學習附課程大綱/指導教授同意書影本</label>
+                <button type="submit" class="btn btn-primary">下載範例</button>
+            </form>
+        </div>
+        <div class="col-auto">
+            <form method="post" asp-controller="AEmployees" asp-action="DownloadFile6" enctype="multipart/form-data">
+                <label for="Input6">他校同意書（外校學生）</label>
+                <button type="submit" class="btn btn-primary">下載範例</button>
+            </form>
+        </div>
+
+    </div>
+    <hr />
+
+@*<p>※勞僱型兼任助理/臨時工另檢附：</p>
+    <div class="row">
+
+        <div class="col-auto">
+            <label for="Input24">兼任助理/臨時工勞動契約（3份）：</label>
+            <input type="file" name="Input24" value="@ViewBag.Input24">
+        </div>
+        <div class="col-auto">
+            <label for="Input25">勞健保申請書：</label>
+            <input type="file" name="Input25" value="@ViewBag.Input25">
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-auto">
+            <label for="Input26">體格檢查報告(聘期6個月以上)：</label>
+            <input type="file" name="Input26" value="@ViewBag.Input26">
+        </div>
+        <div class="col-auto">
+            <label for="Input27">他校同意書（外校學生）：</label>
+            <input type="file" name="Input27" value="@ViewBag.Input27">
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-auto">
+            <label for="Input28">無專職工作聲明書（進修部或在職班學生）：</label>
+            <input type="file" name="Input28" value="@ViewBag.Input28">
+        </div>
+    </div>*@
+
+
+
+
+
+
+
+@*@model IEnumerable<plan02.Models.UserDatum>*@
+
+@*@{
+        ViewData["Title"] = "Index";
+    }*@
+
+@*<h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+
+    </p>*@
+@*@ViewData["Bname"] .*@
+
+@*<table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Unit)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tel)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UGender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.USalary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UEmployeeTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreateTime)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Unit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tel)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UGender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.USalary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UEmployeeTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreateTime)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.UserId">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.UserId">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.UserId">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>*@

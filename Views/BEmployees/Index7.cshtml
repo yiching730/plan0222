@@ -1,0 +1,145 @@
+﻿@model testModel
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>列印登打資料</title>
+        <link rel="icon" href="~/favicon.ico" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-controller="Home" asp-action="Index">首頁</a>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <main class="pb-3 row">
+                <h1 class="display-4 p-3">登打資料印出:同意書</h1>
+                <div class="col-lg-6">
+                    <form asp-action="Download_B">
+                        <div class="form-group">姓名: <input asp-for="BName" class="form-control" /></div>
+
+                        <div class="form-group">
+                            Format:
+                            <div class="row">
+                                @foreach (string format in Model.FormatMappingDictionary.Select(item => item.Key))
+                                {
+                                    <div class="col-3">
+                                        <div class="form-check form-check-inline">
+                                            <input asp-for="Format" class="form-check-input" type="radio" id="@format" value="@format">
+                                            <label for="@format" class="form-check-label">@format</label>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="form-group"><input type="submit" value="列印" class="btn btn-primary" /></div>
+                    </form>
+                </div>
+            </main>
+        </div>
+        <br>
+        <hr>
+        <p>※勞僱型兼任助理/臨時工另檢附：</p>
+        <div class="row">
+            <div class="col-auto">
+                <form method="post" asp-controller="AEmployees" asp-action="DownloadFile2" enctype="multipart/form-data">
+                    <label for="Input1">1.科技部約用人員聘任簽案</label>
+                    <button type="submit" class="btn btn-primary btn-sm">下載範例</button>
+                </form>
+            </div>
+            <div class="col-auto">
+                <form method="post" asp-controller="AEmployees" asp-action="DownloadFile7" enctype="multipart/form-data">
+                    <label for="Input2">2.兼任助理/臨時工勞動契約（3份）</label>
+                    <button type="submit" class="btn btn-primary btn-sm">下載範例</button>
+                </form>
+            </div>
+            <div class="col-auto">
+                <form method="post" asp-controller="" asp-action="" enctype="multipart/form-data">
+                    <label for="Input3">3.勞健保申請書</label>
+                </form>
+            </div>
+            <div class="col-auto">
+                <form method="post" asp-controller="" asp-action="" enctype="multipart/form-data">
+                    <label for="Input4">4.體格檢查報告(聘期6個月以上)</label>
+                </form>
+            </div>
+            <div class="col-auto">
+                <form method="post" asp-controller="AEmployees" asp-action="DownloadFile6" enctype="multipart/form-data">
+                    <label for="Input5">5.他校同意書（外校學生）</label>
+                    <button type="submit" class="btn btn-primary btn-sm">下載範例</button>
+                </form>
+            </div>
+            <div class="col-auto">
+                <form method="post" asp-controller="" asp-action="" enctype="multipart/form-data">
+                    <label for="Input6">6.無專職工作聲明書（進修部或在職班學生）</label>
+                </form>
+            </div>
+
+
+        </div>
+        <hr>
+
+    </body>
+    </html>
+
+
+@*@model BEmployee
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>列印登打資料</title>
+        <link rel="icon" href="~/favicon.ico" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-controller="Home" asp-action="Index">首頁</a>
+                </div>
+            </nav>
+        </header>
+
+        <div class="container">
+            <main class="pb-3 row">
+                <h1 class="display-4 p-3">登打資料印出</h1>
+                <div class="col-lg-6">
+                    <form asp-action="Download_B">
+                        <div class="form-group">姓名: <input asp-for="BName" class="form-control" /></div>
+
+    <div class="form-group">
+                            Format:
+                            <div class="row">
+                                @foreach (string format in Model.FormatMappingDictionary.Select(item => item.Key))
+                                {
+                                    <div class="col-3">
+                                        <div class="form-check form-check-inline">
+                                            <input asp-for="Format" class="form-check-input" type="radio" id="@format" value="@format">
+                                            <label for="@format" class="form-check-label">@format</label>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="form-group"><input type="submit" value="列印" class="btn btn-primary" /></div>
+                    </form>
+                </div>
+            </main>
+        </div>
+
+
+    </body>
+    </html>*@
+

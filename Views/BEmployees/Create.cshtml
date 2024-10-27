@@ -1,0 +1,143 @@
+﻿@model plan02.Models.BEmployee
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>建立聘任資料</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BName" class="control-label"></label>
+                <input asp-for="BName" class="form-control" />
+                <span asp-validation-for="BName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BType" class="control-label"></label>
+                @*<input asp-for="BType" name="btype" class="form-control" />*@
+                <select asp-for="BType" name="btype" class="form-control" asp-items="@ViewBag.employeeTypes"></select>
+                <span asp-validation-for="BType" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="BGender" class="control-label"></label>
+                <input asp-for="BGender" class="form-control" />
+                <span asp-validation-for="BGender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BMail" class="control-label"></label>
+                <input asp-for="BMail" class="form-control" />
+                <span asp-validation-for="BMail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BSalary" class="control-label"></label>
+                <input asp-for="BSalary" class="form-control" />
+                <span asp-validation-for="BSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BEmploymentDate" class="control-label"></label>
+                <input asp-for="BEmploymentDate" class="form-control" />
+                <span asp-validation-for="BEmploymentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BEmploymentDate2" class="control-label"></label>
+                <input asp-for="BEmploymentDate2" class="form-control" />
+                <span asp-validation-for="BEmploymentDate2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="新增" class="btn btn-primary" />
+            </div>
+
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">返回清單</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+@*@model plan02.Models.BEmployee
+
+
+@{
+    ViewData["Title"] = "Create";
+}*@
+
+<!--<h1>建立表單</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BName" class="control-label"></label>
+                <input asp-for="BName" class="form-control" />
+                <span asp-validation-for="BName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BType" class="control-label"></label>-->
+                @*<input asp-for="BType" name="btype" class="form-control" />*@
+                <!--<select asp-for="BType" name="btype" class="form-control" asp-items="@ViewBag.employeeTypes"></select>
+                <span asp-validation-for="BType" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="BGender" class="control-label"></label>
+                <input asp-for="BGender" class="form-control" />
+                <span asp-validation-for="BGender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BMail" class="control-label"></label>
+                <input asp-for="BMail" class="form-control" />
+                <span asp-validation-for="BMail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BSalary" class="control-label"></label>
+                <input asp-for="BSalary" class="form-control" />
+                <span asp-validation-for="BSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BEmploymentDate" class="control-label"></label>
+                <input asp-for="BEmploymentDate" class="form-control" />
+                <span asp-validation-for="BEmploymentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="新增" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">返回清單</a>
+</div>-->
+
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@

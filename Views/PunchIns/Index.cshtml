@@ -1,0 +1,65 @@
+﻿@model IEnumerable<plan02.Models.PunchIn>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>簽到退紀錄</h1>
+
+@*<p>
+    <a asp-action="Create2">Create New</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Month)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Day)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PunchIn1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PunchOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remark2)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Month)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PunchIn1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PunchOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remark2)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Pid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Pid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Pid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,40 @@
+﻿<div>範例檔及修改檔下載區</div>
+<p></p>
+
+<table border="1">
+    <tr>
+        <th>序號</th>
+        <th>程式名稱</th>
+        <th>現有word樣板</th>
+        <th>上傳修改word樣板</th>
+        <th>修改後歷程清冊</th>
+    </tr>
+    <tr>
+        <td>
+            <div>1</div>
+        </td>
+        <td>
+            <div>
+                enrp075_1休學證明書(一般用)
+            </div>
+        </td>
+        <td align="center">
+            <form method="post" asp-controller="AEmployees" asp-action="dword_enrp075_1" enctype="multipart/form-data">
+                <button type="submit">下載</button>
+            </form>
+        </td>
+        <td>
+            <form method="post" asp-controller="AEmployees" asp-action="tword_enrp075_1" enctype="multipart/form-data">
+                <input type="file" name="files" accept=".dox, .docx, .odt" />
+                <input type="submit" value="上傳" />
+            </form>
+        </td>
+        <td align="center">
+            <div>
+                <form method="post" asp-controller="AEmployees" asp-action="cwtp_word_enrp075_1" enctype="multipart/form-data">
+                    <button type="submit">下載PDF檔</button>
+                </form>
+            </div>
+        </td>
+    </tr>
+</table>

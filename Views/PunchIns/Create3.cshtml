@@ -1,0 +1,228 @@
+﻿@model plan02.Models.PunchIn
+@{
+    int year = 2022;
+    int month = 3;
+    int daysInMonth = DateTime.DaysInMonth(year, month);
+
+    var months = new List<SelectListItem>()
+{
+    new SelectListItem {Text = "1", Value = "1"},
+    new SelectListItem {Text = "2", Value = "2"},
+    new SelectListItem {Text = "3", Value = "3",Selected=true},
+    new SelectListItem {Text = "4", Value = "4"},
+    new SelectListItem {Text = "5", Value = "5"},
+    new SelectListItem {Text = "6", Value = "6"},
+    new SelectListItem {Text = "7", Value = "7"},
+    new SelectListItem {Text = "8", Value = "8"},
+    new SelectListItem {Text = "9", Value = "9"},
+    new SelectListItem {Text = "10", Value = "10"},
+    new SelectListItem {Text = "11", Value = "11"},
+    new SelectListItem {Text = "12", Value = "12"},
+    };
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        // initialize the value of the input field to the selected value
+
+
+        $('.Month').val($('#selectlist').val());
+
+        $('#selectlist').change(function () {
+            // when the value of the dropdown list changes
+            // update the input field
+            var month = $(this).val();
+            console.log(month);
+            $("#titlemonth").text($(this).val());
+            $('.Month').val($(this).val());
+           
+            $(document).find("tr[id='PunchIn[30]']").remove();
+            if ((month == 1) || (month == 3) || (month == 5) || (month == 7) || (month == 8) || (month == 10) || (month == 12))
+            {
+                $(document).find("table[id=test]").append('<tr id="PunchIn[30]"><td><div class="form-group"><input name="PunchIn[30].Month" class="Month" value="" type="number" id="Month" /></div><div class="form-group"><a name="31">31</a><input name="PunchIn[30].Day" class="form-control" value="31" hidden type="number" id="Day" /><span value="31" class="text-danger field-validation-valid" data-valmsg-for="Day" data-valmsg-replace="true"></span></div></td><td><div class="form-group"><input name="PunchIn[30].PunchIn1" class="form-control" type="time" id="PunchIn1" value="" /><span class="text-danger field-validation-valid" data-valmsg-for="PunchIn1" data-valmsg-replace="true"></span></div></td><td><div class="form-group"><input name="PunchIn[30].PunchOut" class="form-control" type="time" id="PunchOut" value="" /><span class="text-danger field-validation-valid" data-valmsg-for="PunchOut" data-valmsg-replace="true"></span></div></td><td><div class="form-group"><input name="PunchIn[30].Remark2" class="form-control" type="text" id="Remark2" value="" /><span class="text-danger field-validation-valid" data-valmsg-for="Remark2" data-valmsg-replace="true"></span></div></td></tr>');
+               
+            }
+            
+            
+            
+        });
+        
+    });
+
+
+</script>
+
+
+
+<h1>每月出勤簽到退</h1>
+
+
+<hr />
+<select id="selectlist" asp-items=months></select>
+<h2 align="center">@year <a id="titlemonth">@month</a> 月</h2>
+<form asp-action="Create">
+
+    <table class="table"id="test">
+        <thead>
+            <tr>
+                <th>
+                    日期
+                </th>
+                <th>
+                    上班時間
+                </th>
+                <th>
+                    下班時間
+                </th>
+                <th>
+                    請假備註
+                </th>
+
+            </tr>
+        </thead>
+        <tbody >
+
+            @for (int day = 1; day <= daysInMonth; day++)
+            {
+
+                <tr id="PunchIn[@(day-1)]">
+
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].Month asp-for="Month" class="Month" value="" />
+                        </div>
+                        <div class="form-group">
+                            <a name="@day">@day</a>
+                            <input name=PunchIn[@(day-1)].Day asp-for="Day" class="form-control" value=@day hidden />
+                            <span asp-validation-for="Day" value="@day" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].PunchIn1 asp-for="PunchIn1" class="form-control" />
+                            <span asp-validation-for="PunchIn1" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].PunchOut asp-for="PunchOut" class="form-control" />
+                            <span asp-validation-for="PunchOut" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                             <select asp-for="Remark2" name=PunchIn[@(day-1)].Remark2 class="form-control" asp-items="@ViewBag.leaveDay">
+                                 <option selected randonly="randonly">--- 請選擇 ---</option>
+                                 </select>                           
+                           @* <input name=PunchIn[@(day-1)].Remark2 asp-for="Remark2" class="form-control" />*@
+                            <span asp-validation-for="Remark2" class="text-danger"></span>
+                        </div>
+                    </td>
+
+                </tr>
+
+            }
+            <input type="submit" value="新增" class="btn btn-primary" />
+        </tbody>
+
+    </table>
+</form>
+
+
+
+@*@model plan02.Models.PunchIn
+
+@{
+    ViewData["Title"] = "Create3";
+}
+
+@{
+    int year = 2022;
+    int month = 3;
+    int daysInMonth = DateTime.DaysInMonth(year, month);
+}
+
+<h1>每月簽到退</h1>
+
+
+<hr />
+<h2 align="center">@year @month 月份</h2>
+<form asp-action="Create2">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    年
+                </th>
+                <th>
+                    月
+                </th>
+                <th>
+                    日
+                </th>
+                <th>
+                    上班時間
+                </th>
+                <th>
+                    下班時間
+                </th>
+                <th>
+                    請假備註
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int day = 1; day <= daysInMonth; day++)
+            {
+
+                <tr>
+                    <td>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].Year asp-for="Year" class="form-control" value=@year readonly="readonly" />
+                            <span asp-validation-for="Year" value="@year" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].Month asp-for="Month" class="form-control" value=@month readonly="readonly" />
+                            <span asp-validation-for="Month" value="@month" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].Day asp-for="Day" class="form-control" value=@day readonly="readonly" />
+                            <span asp-validation-for="Day" value="@day" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].PunchIn1 asp-for="PunchIn1" class="form-control" />
+                            <span asp-validation-for="PunchIn1" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].PunchOut asp-for="PunchOut" class="form-control" />
+                            <span asp-validation-for="PunchOut" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].Remark2 asp-for="Remark2" class="form-control" />
+                            <span asp-validation-for="Remark2" class="text-danger"></span>
+                        </div>
+                    </td>
+                </tr>
+            }
+            <input type="submit" value="送出" class="btn btn-primary" />
+        </tbody>
+
+    </table>
+</form>*@

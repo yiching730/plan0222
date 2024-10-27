@@ -1,0 +1,124 @@
+﻿@using System.Globalization
+@model plan02.Models.PunchIn
+
+@{
+    ViewData["Title"] = "Create7";
+}
+
+@{
+    int year = DateTime.Now.Year;
+    int month = DateTime.Now.Month;
+    int daysInMonth = DateTime.DaysInMonth(year, month);
+    CultureInfo ci = new CultureInfo("zh-tw");
+
+
+    int currentDate = DateTime.Now.AddMonths(-1).Day;
+    var Firstday = DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).ToShortDateString();
+    var Lastday = DateTime.Parse(DateTime.Now.ToString("yyyy-01-01")).AddYears(1).AddDays(-1).ToShortDateString();
+}
+
+
+
+<h1 align="center">本月簽到退登打</h1>
+
+@*@Lastday **@
+<td> 
+    <a asp-action="Create6">上個月簽到退</a>
+</td> 
+<hr />
+<h2 align="center">@year @month 月份</h2>
+<form asp-action="Create7">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    年
+                </th>
+                <th>
+                    月
+                </th>
+                <th>
+                    日
+                </th>
+                <th>
+                    上班時間
+                </th>
+                <th>
+                    下班時間
+                </th>
+                <th>
+                    請假備註
+                </th>
+                 <th>
+                    星期
+                </th>
+                 <th>
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int day = 1; day <= daysInMonth; day++)
+            {
+                 DateTime daySet2 = new DateTime(year, month, day);
+                string DWName = ci.DateTimeFormat.GetDayName(daySet2.DayOfWeek);
+                <tr>
+                    <td>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].Year asp-for="Year" class="form-control" value=@year readonly="readonly" />
+                            <span asp-validation-for="Year" value="@year" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].Month asp-for="Month" class="form-control" value=@month readonly="readonly" />
+                            <span asp-validation-for="Month" value="@month" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].Day asp-for="Day" class="form-control" value=@day readonly="readonly" />
+                            <span asp-validation-for="Day" value="@day" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].PunchIn1 asp-for="PunchIn1" class="form-control" />
+                            <span asp-validation-for="PunchIn1" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].PunchOut asp-for="PunchOut" class="form-control" />
+                            <span asp-validation-for="PunchOut" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            @*<input name=PunchIn[@(day-1)].Remark2 asp-for="Remark2" class="form-control" />*@
+                            <select asp-for="Remark2" name=PunchIn[@(day-1)].Remark2 id="Remark2" class="form-control" asp-items="@ViewBag.leaveDays">
+                            <option selected randonly="randonly" value="">-請選擇-</option>
+                            </select>    
+                            <span asp-validation-for="Remark2" class="text-danger"></span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input name=PunchIn[@(day-1)].Weekday asp-for="Weekday" value=@DWName class="form-control" readonly="readonly" />
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="submit" value="送出" class="btn btn-primary" />
+                        </div>
+                    </td>
+                </tr>
+            }
+           @* <input type="submit" value="送出" class="btn btn-primary" />*@
+        </tbody>
+
+    </table>
+</form>

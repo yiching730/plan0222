@@ -1,0 +1,267 @@
+﻿@model plan02.Models.SignOn
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<style>
+    tr {
+        background-color: green;
+        color: white;
+    }
+
+    table, th, td {
+        border: 2px solid black;
+    }
+</style>
+<h1>本月簽到退</h1>
+
+
+
+<hr />
+<form asp-action="Create">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    日期
+                </th>
+                <th>
+                    上班時間
+                </th>
+                <th>
+                    下班時間
+                </th>
+                <th>
+                    請假備註
+                </th>
+                @*<th>
+
+                    </th>*@
+
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int year = 2022;
+                for (int month = 1; month <= 1; month++)
+                {
+                    int daysInMonth = DateTime.DaysInMonth(year, month);
+                    for (int day = 1; day <= daysInMonth; day++)
+                    {
+                        DateTime weekday = new DateTime(year, month, day);
+
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    @year/@month/@day
+                                </div>
+                            </td>
+                            <td>
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    @*<label asp-for="SignIn" class="control-label"></label>*@
+                                    <input asp-for="SignIn" class="form-control" />
+                                    <span asp-validation-for="SignIn" class="text-danger"></span>
+                                    @*<select asp-for="Weekday" class="form-control"  asp-items="@ViewBag.dayss"></select>*@
+                                    @*value="2022-01-01"*@
+                                    @*@DateTime.Now.ToString("yyyy-MM-dd")*@
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    @*<label asp-for="SignOut" class="control-label"></label>*@
+                                    <input asp-for="SignOut" class="form-control" />
+                                    <span asp-validation-for="SignOut" class="text-danger"></span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    @*<label asp-for="Remark" class="control-label"></label>*@
+                                    <input asp-for="Remark" class="form-control" />
+                                    <span asp-validation-for="Remark" class="text-danger"></span>
+                                </div>
+                            </td>
+                            @*<td>
+                                    <div class="form-group">
+                                        <input type="submit" value="Create" class="btn btn-primary" />
+                                    </div>
+                                </td>*@
+                        </tr>
+                    }
+                }
+            }
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </tbody>
+
+    </table>
+</form>
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+@*@model plan02.Models.SignOn
+
+@{
+    ViewData["Title"] = "Create";
+}*@
+@*<style>
+    tr {
+        background-color: green;
+        color: white;
+    }
+
+    table, th, td {
+        border: 2px solid black;
+    }
+</style>
+<h1>本月簽到退</h1>
+
+
+
+<hr />
+<form asp-action="Create">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    日期
+                </th>
+                <th>
+                    上班時間
+                </th>
+                <th>
+                    下班時間
+                </th>
+                <th>
+                    請假備註
+                </th>
+                <th>
+
+                    </th>
+
+            </tr>
+        </thead>*@
+        @*<tbody>
+            @{
+                int year = 2022;
+                for (int month = 1; month <= 1; month++)
+                {
+                    int daysInMonth = DateTime.DaysInMonth(year, month);
+                    for (int day = 1; day <= daysInMonth; day++)
+                    {
+                        DateTime weekday = new DateTime(year, month, day);
+
+                        <tr>
+                            <td>
+                                <div class="form-group">*@
+                                    @*@year/@month/@day*@
+                                @*</div>
+                            </td>
+                            <td>
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">*@
+                                    @*<label asp-for="SignIn" class="control-label"></label>*@
+                                    @*<input asp-for="SignIn" class="form-control" />
+                                    <span asp-validation-for="SignIn" class="text-danger"></span>*@
+                                    @*<select asp-for="Weekday" class="form-control"  asp-items="@ViewBag.dayss"></select>*@
+                                    @*value="2022-01-01"*@
+                                    @*@DateTime.Now.ToString("yyyy-MM-dd")*@
+                                @*</div>
+                            </td>
+                            <td>
+                                <div class="form-group">*@
+                                    @*<label asp-for="SignOut" class="control-label"></label>*@
+                                    @*<input asp-for="SignOut" class="form-control" />
+                                    <span asp-validation-for="SignOut" class="text-danger"></span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">*@
+                                    @*<label asp-for="Remark" class="control-label"></label>*@
+                                    @*<input asp-for="Remark" class="form-control" />
+                                    <span asp-validation-for="Remark" class="text-danger"></span>
+                                </div>
+                            </td>*@
+                            @*<td>
+                                    <div class="form-group">
+                                        <input type="submit" value="Create" class="btn btn-primary" />
+                                    </div>
+                                </td>*@
+                        @*</tr>
+                    }
+                }
+            }
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </tbody>
+
+    </table>
+</form>
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+@*@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}*@
+
+
+
+
+
+@*@model plan02.Models.SignOn
+
+    @{
+        ViewData["Title"] = "Create";
+    }*@
+
+@*<h1>Create</h1>
+
+    <h4>SignOn</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="SignIn" class="control-label"></label>
+                    <input asp-for="SignIn" class="form-control" />
+                    <span asp-validation-for="SignIn" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="SignOut" class="control-label"></label>
+                    <input asp-for="SignOut" class="form-control" />
+                    <span asp-validation-for="SignOut" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Remark" class="control-label"></label>
+                    <input asp-for="Remark" class="form-control" />
+                    <span asp-validation-for="Remark" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>*@
+
+@*@section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@

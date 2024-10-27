@@ -1,0 +1,56 @@
+﻿@model IEnumerable<plan02.Models.SignOn>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    tr {
+        background-color: green;
+        color: white;
+    }
+    table, th, td {
+        border: 2px solid black;
+    }
+</style>
+
+<h1>出勤簽到資料維護</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SignIn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SignOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remark)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SignIn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SignOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remark)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Sid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Sid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Sid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

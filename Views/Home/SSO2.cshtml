@@ -1,0 +1,45 @@
+﻿@using plan02.Models
+@using plan02.Services
+@model SingleSignOn
+
+@{
+    ViewData["Title"] = "單登";
+    var returnUrl = ViewBag.ReturnUrl;
+    returnUrl = System.Net.WebUtility.UrlEncode(returnUrl);
+    var message = TempData["Message"] as string;
+}
+
+<div class="text-center">
+    <h1 class="display-4"> 單登 </h1>
+</div>
+<div class="row mt-5">
+    <div class="col-10">
+        @if (!string.IsNullOrEmpty(message))
+        {
+            <h5 class="alert-danger m-2">@message</h5>
+        }
+    <form action="/login?ReturnUrl=@returnUrl" method="post">
+        <div class="form-group">
+            <label for="code">單登密碼 </label>
+            <input type="text" name="code" id="code" class="form-control" placeholder="單登密碼">
+        </div>
+        <button onclick="Auth();">OAuth2驗証</button>
+    </form>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+        function Auth() {
+            var URL = 'http://163.17.100.48/oauth2ServerToken.do';
+            URL += 'response_type=code';
+            URL += '&client_id=kjradojq';
+            URL += '&redirect_uri= https://pgmt.ntus.edu.tw/';
+            URL += '&state='+new Date().getTime();
+            window.location.href = URL;
+        }
+</script>
+
+
+
+
